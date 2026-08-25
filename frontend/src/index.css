@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.crimson.DEFAULT');
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-crimson text-white hover:bg-crimson-deep;
+  }
+  .btn-secondary {
+    @apply btn bg-pulse text-white hover:bg-pulse-deep;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-white text-ink hover:border-ink;
+  }
+  .btn-ghost {
+    @apply btn text-inkSoft hover:text-ink hover:bg-line/50;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-white p-6 shadow-card;
+  }
+  .input {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-inkSoft/60 focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-inkSoft;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold font-mono;
+  }
+  .eyebrow {
+    @apply font-mono text-xs font-semibold uppercase tracking-widest text-crimson;
+  }
+}
+
+/* Signature motif: a thin animated pulse/ECG line used sparingly as a section divider */
+.pulse-line {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+.pulse-line svg {
+  width: 200%;
+  height: 100%;
+  animation: pulse-scroll 6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-line svg {
+    animation: none;
+  }
+}
+@keyframes pulse-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

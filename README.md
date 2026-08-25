@@ -1,6 +1,11 @@
 # RedLine — Blood Donor & Emergency Blood Request Platform
 
-A full-stack MVP that connects blood donors, requesters, hospitals, and
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/KANISH-2004/blood-donor)
+[![Pytest Suite](https://img.shields.io/badge/pytest-20%20passed-brightgreen.svg)](backend/tests)
+[![Python](https://img.shields.io/badge/FastAPI-0.111-009688.svg)](backend)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](frontend)
+
+A full-stack platform that connects blood donors, requesters, hospitals, and
 admins so that people can find compatible, available donors quickly during
 an emergency.
 
